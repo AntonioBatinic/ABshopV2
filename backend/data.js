@@ -7,7 +7,8 @@ export default  {
         image:"/images/mug1.png",
         price: 15,
         rating: 4.5,
-        numReviews: 10
+        numReviews: 10,
+        countInStock: 6
     },
     {
         id: '2',
@@ -16,7 +17,8 @@ export default  {
         image:"/images/mug2.png",
         price: 15,
         rating: 4.2,
-        numReviews: 4
+        numReviews: 4,
+        countInStock: 7
     },
     {
         id: '3',
@@ -25,7 +27,8 @@ export default  {
         image:"/images/mug3.png",
         price: 15,
         rating: 4.7,
-        numReviews: 10
+        numReviews: 10,
+        countInStock: 2
     },
 ]
 }
