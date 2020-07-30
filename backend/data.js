@@ -1,7 +1,7 @@
 export default  {
     products:[
         {
-        id: '1',
+        _id: '1',
         name: "Raw mug",
         category: 'Mugs',
         image:"/images/mug1.png",
@@ -11,7 +11,7 @@ export default  {
         countInStock: 6
     },
     {
-        id: '2',
+        _id: '2',
         name: "Donut mug",
         category: 'Mugs',
         image:"/images/mug2.png",
@@ -21,7 +21,7 @@ export default  {
         countInStock: 7
     },
     {
-        id: '3',
+        _id: '3',
         name: "Abstract vector mug",
         category: 'Mugs',
         image:"/images/mug3.png",
