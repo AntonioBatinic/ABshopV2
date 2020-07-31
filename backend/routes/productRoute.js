@@ -1,4 +1,4 @@
-import express from 'express'
+import express, { response } from 'express'
 import Product from '../models/productModel'
 import { getToken, isAuth, isAdmin } from '../util';
 
@@ -7,6 +7,15 @@ const router = express.Router();
 router.get("/", async (req,res) => {
     const products = await Product.find({});
     res.send(products);
+})
+
+router.get("/:id", async (req,res) => {
+    const products = await Product.findOne({_id: req.params.id});
+    if(product){
+        res.send(products);
+    } else {
+        res.status(404).send({message:"Product not found"})
+    }
 })
 
 router.post("/", async (req,res) => {
@@ -27,7 +36,7 @@ router.post("/", async (req,res) => {
     return res.status(500).send({message:"Error in Creating Product"})
 })
 
-router.put("/:id",isAuth,isAdmin,  async (req,res) => {
+router.put("/:id", isAuth, isAdmin,  async (req,res) => {
     const productId = req.params.id;
     const product = await Product.findById(productId)
     if(product){

@@ -38,4 +38,4 @@ const isAdmin =(req,res,next) => {
     return res.status(401).send({msg: "Admin Token is not valid"})
 }
 
-export {getToken, isAduth, isAdmin}
+export {getToken, isAuth, isAdmin}
