@@ -10,7 +10,7 @@ function RegisterScreen (props) {
     const [rePassword, setRePassword] = useState('');
     const userRegister = useSelector(state => state.userRegister);
     const {loading,userInfo, error} = userRegister;
-    const redirect = props.location.search ? props.location.search("=")[1] : '/';
+    const redirect = props.location.search?props.location.search.split("=")[1] : '/';
 
     const dispatch = useDispatch();
 
@@ -59,7 +59,7 @@ function RegisterScreen (props) {
                 </li>
                 <li>
                     Already have an account?
-                    <Link to={redirect === "/" ? "signin" : "signin?redirect=" + redirect} className="button secondary text-center">Create your ABshop account</Link>
+                    <Link to={redirect === "/" ? "signin" : "signin?redirect=" + redirect} className="button secondary text-center">Sign In</Link>
                 </li>
             </ul>
         </form>

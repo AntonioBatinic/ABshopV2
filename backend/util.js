@@ -19,7 +19,7 @@ const isAuth = (req,res,next) => {
         jwt.verify(onlyToken, config.JWT_SECRET, (err,decode) => {
             if(err)
             {
-                return res.status(401),send({msg:"Invalid token"})
+                return res.status(401).send({msg:"Invalid token"})
             }
             req.user = decode;
             next();

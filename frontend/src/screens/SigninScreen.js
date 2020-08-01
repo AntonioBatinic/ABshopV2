@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { signin } from '../actions/userActions';
@@ -9,7 +9,8 @@ function SigninScreen (props) {
     const userSignin = useSelector(state => state.userSignin);
     const {loading,userInfo, error} = userSignin;
     const dispatch = useDispatch();
-    const redirect = props.location.search ? props.location.search("=")[1] : '/';
+    const redirect = props.location.search?props.location.search.split("=")[1] : '/';
+
     
     useEffect(() => {
         if(userInfo){
